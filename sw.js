@@ -55,6 +55,7 @@ self.addEventListener('push', (event) => {
     icon: BASE + 'pwa/icon-192.png',
     badge: BASE + 'pwa/icon-192.png',
     tag: path || 'notice',
+    renotify: true, // A newer grouped message should alert again, not silently replace the tray entry.
     data: { url: new URL(path.replace(/^\//, ''), self.registration.scope).href },
   }))
 })
